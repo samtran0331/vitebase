@@ -1,3 +1,39 @@
 {
-  "extends": "@antfu"
+  "extends": "@antfu",
+  "rules": {
+    "curly":"off",
+    "no-console":"off",
+    "no-tabs":"off",
+    "prefer-const":"off",
+    "eol-last":"off",
+    //https://github.com/typescript-eslint/typescript-eslint/issues/1824
+    "indent": "off",
+    "vue/html-self-closing": "off",
+    "@typescript-eslint/indent": ["off"],
+    "no-template-curly-in-string":"off",
+    "eslint-comments/no-unlimited-disable": "off",
+    "lines-between-class-members":"off",
+    "@typescript-eslint/consistent-type-imports": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "no-unused-vars": ["off", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
+    "@typescript-eslint/brace-style": "off",
+    "vue/html-indent": ["warn", "tab", {
+      "attribute": 1,
+      "baseIndent": 1,
+      "closeBracket": 0,
+      "alignAttributesVertically": true,
+      "ignores": []
+    }],
+    "vue/max-attributes-per-line": ["error", {
+      "singleline": {
+        "max": 2
+      },      
+      "multiline": {
+        "max": 1
+      }
+    }],
+    "yml/no-tab-indent": "off",
+    // "vue/valid-v-model": "off",
+    "no-unreachable": 2
+    }
 }
