@@ -27,7 +27,7 @@ function dialogClick(msg: string) {
 
 <template>
 	<div>
-		<h3>THIS IS THE INDEX.VUE PAGE IN THE CALENDAR FOLDER!!!!</h3>
+		<h3>THIS IS THE INDEX.VUE PAGE IN THE CALENDAR FOLDER!!!!????</h3>
 		<div id="kendo-controls" style="margin: 25px;">
 			<p style="padding: 15px;">
 				<Button
