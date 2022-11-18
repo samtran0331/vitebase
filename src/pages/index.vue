@@ -45,7 +45,7 @@ function dialogClick(msg: string) {
 
 			<div py-4 />
 		</div>
-		<h3>THIS IS THE MAIN INDEX.VUE PAGE!!!</h3>
+		<h3>THIS IS THE MAIN INDEX.VUE PAGE!?!?!</h3>
 		<div id="kendo-controls" style="margin: 25px;">
 			<p style="padding: 15px;">
 				<Button
