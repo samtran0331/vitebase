@@ -51,6 +51,7 @@ function dialogClick(msg: string) {
 			<Button
 				class="k-button wv-icon-button wv-add-new"
 				title="Add a new calendar item"
+				@click="myClick('wv icon button')"
 			>
 				<span class="wvi wvi-navigate-plus" />Add
 			</Button>
