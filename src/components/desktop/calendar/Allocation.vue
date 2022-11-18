@@ -14,7 +14,7 @@ import { Loader } from '@progress/kendo-vue-indicators'
 import DesktopAllocationService from '~/services/desktop-allocation'
 import ResponseData from '~/types/ResponseData'
 
-const emit = defineEmits(['set-dialog-message'])
+const emit = defineEmits(['setDialogMessage'])
 const StartDate = ref('')
 const EndDate = ref('')
 const EmployeeList = ref([])
@@ -125,7 +125,7 @@ const StandardHoursAvailable = ref(0)
 const Variance = ref(0)
 
 const showErrorMessage = (err) => {
-	emit('set-dialog-message', err, 'Error Message')
+	emit('setDialogMessage', err, 'Error Message')
 }
 
 function getAllocationForm() {
@@ -391,7 +391,7 @@ function employeeSelected(e) {
 										class="btn-check"
 										name="btnradio"
 										autocomplete="off"
-										:checked="selectedSummary == '3'"
+										:checked="selectedSummary === '3'"
 										@change="clearGrid"
 									>
 										<label class="btn btn-outline-secondary" for="btnradio2">{{ summaryLevels[1].label

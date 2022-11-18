@@ -8,13 +8,20 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Allocation: typeof import('./components/desktop/calendar/Allocation.vue')['default']
+    Availability: typeof import('./components/desktop/calendar/Availability.vue')['default']
     Counter: typeof import('./components/shared/Counter.vue')['default']
     Dialog: typeof import('./components/shared/Dialog.vue')['default']
+    Filter: typeof import('./components/desktop/calendar/Filter.vue')['default']
     Footer: typeof import('./components/shared/Footer.vue')['default']
     MultiSelect: typeof import('./components/shared/MultiSelect.vue')['default']
+    NewActivity: typeof import('./components/desktop/calendar/NewActivity.vue')['default']
     README: typeof import('./components/README.md')['default']
+    Report: typeof import('./components/desktop/calendar/Report.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Scheduler: typeof import('./components/desktop/calendar/Scheduler.vue')['default']
+    ToolbarButtonGroup: typeof import('./components/desktop/calendar/ToolbarButtonGroup.vue')['default']
+    Workload: typeof import('./components/desktop/calendar/Workload.vue')['default']
     WvInput: typeof import('./components/shared/WvInput.vue')['default']
   }
 }

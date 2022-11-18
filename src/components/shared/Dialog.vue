@@ -1,14 +1,3 @@
-<template>
-	<window
-		v-if="visible"
-		:title="title"
-		:initial-height="height"
-		@close="handleClose"
-		@move="handleMove"
-		@resize="handleResize"
-		@stagechange="handleStageChange"
-	/>
-</template>
 <script setup lang="ts">
 import { Window } from '@progress/kendo-vue-dialogs'
 const visible = ref(false)
@@ -28,5 +17,18 @@ function handleStageChange() {
 	console.log('handleStageChange')
 }
 </script>
+
+<template>
+	<Window
+		v-if="visible"
+		:title="title"
+		:initial-height="height"
+		@close="handleClose"
+		@move="handleMove"
+		@resize="handleResize"
+		@stagechange="handleStageChange"
+	/>
+</template>
+
 <style scoped>
 </style>

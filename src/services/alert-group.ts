@@ -4,6 +4,7 @@ class AlertGroupService {
 	getAlertGroups() {
 		return http.get('/GetAlertGroups')
 	}
+
 	getAlertGroup(alertGroupCode: string) {
 		return http.get('/GetAlertGroup', { params: { AlertGroupCode: alertGroupCode } })
 	}

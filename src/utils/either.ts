@@ -7,9 +7,7 @@ const enum EitherType {
 }
 
 export type Either<L, R> =
-  // eslint-disable-next-line no-use-before-define
   | EitherConstructor<L, R, EitherType.Right>
-  // eslint-disable-next-line no-use-before-define
   | EitherConstructor<L, R, EitherType.Left>
 
 class EitherConstructor<L, R, T extends EitherType = EitherType> {
@@ -21,7 +19,6 @@ class EitherConstructor<L, R, T extends EitherType = EitherType> {
     return new EitherConstructor<T, R, EitherType.Left>(EitherType.Left, v)
   }
 
-  // eslint-disable-next-line no-useless-constructor
   private constructor(
     private readonly type: T,
     public readonly value: T extends EitherType.Left ? L : R,

@@ -1,3 +1,19 @@
+<script setup lang="ts">
+const props = defineProps<{
+    options: []
+    listSize: string
+    modelValue: []
+}>()
+const emit = defineEmits(['selectionChanged'])
+const selectedItems = ref([])
+const handleSelectionChange = (e) => {
+  emit('selectionChanged', selectedItems.value)
+}
+watch(() => props.modelValue, (oldVal, newVal) => {
+	selectedItems.value = oldVal
+    })
+</script>
+
 <template>
 	<select
 		v-model="selectedItems"
@@ -15,21 +31,6 @@
 		</option>
 	</select>
 </template>
-<script setup lang="ts">
 
-const props = defineProps<{
-    options: []
-    listSize: string
-    modelValue: []
-}>()
-const selectedItems = ref([])
-const emit = defineEmits(['selectionChanged'])
-const handleSelectionChange = (e) => {
-  emit('selectionChanged', selectedItems.value)
-}
-watch(() => props.modelValue, (oldVal, newVal) => {
-	selectedItems.value = oldVal
-    })
-</script>
 <style scoped>
 </style>

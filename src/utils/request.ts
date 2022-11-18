@@ -26,7 +26,8 @@ export default class FetchRequest {
     const params = Object.assign({}, this.options.params, options.params ?? {})
 
     let finalUrl = `${prefix}${url}`
-    if (Object.keys(params).length > 0) finalUrl += `?${params2query(params)}`
+    if (Object.keys(params).length > 0)
+finalUrl += `?${params2query(params)}`
 
     return finalUrl
   }
@@ -60,9 +61,9 @@ export default class FetchRequest {
     const finalUrl = this.generateFinalUrl(url, options)
     const headers = this.generateFinalHeaders(options)
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const fetchOptions: any = { method, headers }
-    if (data !== undefined) fetchOptions.body = JSON.stringify(data)
+    if (data !== undefined)
+fetchOptions.body = JSON.stringify(data)
     return fetch(finalUrl, fetchOptions)
   }
 
@@ -124,7 +125,8 @@ export default class FetchRequest {
   }
 
   public setAuthorizationHeader(token: string): void {
-    if (token !== '') this.options.headers.Authorization = `Token ${token}`
+    if (token !== '')
+this.options.headers.Authorization = `Token ${token}`
   }
 
   public deleteAuthorizationHeader(): void {

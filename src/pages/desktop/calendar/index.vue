@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Button } from '@progress/kendo-vue-buttons'
 import { Dialog, DialogActionsBar, Window } from "@progress/kendo-vue-dialogs"
-
+import { DateTimePicker } from '@progress/kendo-vue-dateinputs'
 const user = useUserStore()
 const name = $ref(user.savedName)
 
@@ -28,7 +28,9 @@ function dialogClick(msg: string) {
 <template>
 	<div>
 		<h3>THIS IS THE INDEX.VUE PAGE IN THE CALENDAR FOLDER!!!!????</h3>
-		<hr />
+		<hr style="margin: 10px 0px 10px 0px" />
+		<DateTimePicker :style="{ width: '260px' }" />
+		<hr style="margin: 10px 0px 10px 0px" />
 		<Button
 			class="k-button wv-icon-button wv-add-new"
 			title="Add a new calendar item"
@@ -36,7 +38,7 @@ function dialogClick(msg: string) {
 		>
 			<span class="wvi wvi-navigate-plus" />Add
 		</Button>
-		<hr />
+		<hr style="margin: 10px 0px 10px 0px" />
 		<div id="kendo-controls" style="margin: 25px;">
 			<p style="padding: 15px;">
 				<Button

@@ -47,7 +47,7 @@ function dialogClick(msg: string) {
 		</div>
 		<h3>THIS IS THE MAIN INDEX.VUE PAGE!?!?!</h3>
 		<div id="kendo-controls" style="margin: 25px;">
-			<hr />
+			<hr style="margin: 10px 0px 10px 0px" />
 			<Button
 				class="k-button wv-icon-button wv-add-new"
 				title="Add a new calendar item"
@@ -55,7 +55,7 @@ function dialogClick(msg: string) {
 			>
 				<span class="wvi wvi-navigate-plus" />Add
 			</Button>
-			<hr />
+			<hr style="margin: 10px 0px 10px 0px" />
 			<p style="padding: 15px;">
 				<Button
 					theme-color="primary"

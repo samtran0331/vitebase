@@ -1,3 +1,13 @@
+<script setup lang="ts">
+const props = defineProps<{
+	labelText: String
+	placeholderText: String | undefined
+	helpText: String | undefined
+    modelValue: String | undefined
+}>()
+const emit = defineEmits(['update:modelValue'])
+</script>
+
 <template>
 	<div class="input-group">
 		<label
@@ -19,14 +29,6 @@
 		>{{ helpText }}</small>
 	</div>
 </template>
-<script setup lang="ts">
-const props = defineProps<{
-	labelText: String
-	placeholderText: String | undefined
-	helpText: String | undefined
-    modelValue: String | undefined
-}>()
-const emit = defineEmits(['update:modelValue'])
-</script>
+
 <style scoped>
 </style>
