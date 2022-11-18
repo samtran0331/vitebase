@@ -34,6 +34,7 @@
     }],
     "yml/no-tab-indent": "off",
     // "vue/valid-v-model": "off",
-    "no-unreachable": 2
+    "no-unreachable": 2,
+    "@typescript-eslint/quotes": "off"
     }
 }
