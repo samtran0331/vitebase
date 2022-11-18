@@ -45,8 +45,8 @@ function dialogClick(msg: string) {
 
 			<div py-4 />
 		</div>
-		<h3>THIS IS THE MAIN INDEX.VUE PAGE!</h3>
-		<div style="margin: 25px;">
+		<h3>THIS IS THE MAIN INDEX.VUE PAGE!!!</h3>
+		<div id="kendo-controls" style="margin: 25px;">
 			<p style="padding: 15px;">
 				<Button
 					theme-color="primary"
@@ -90,33 +90,34 @@ function dialogClick(msg: string) {
 				</Dialog>
 			</div>
 		</div>
-		<input
-			id="input"
-			v-model="name"
-			:placeholder="t('intro.whats-your-name')"
-			:aria-label="t('intro.whats-your-name')"
-			type="text"
-			autocomplete="false"
-			p="x4 y2"
-			w="250px"
-			text="center"
-			bg="transparent"
-			border="~ rounded gray-200 dark:gray-700"
-			outline="none active:none"
-			@keydown.enter="go"
-		>
-		<label class="hidden" for="input">{{ t('intro.whats-your-name') }}</label>
-
-		<div>
-			<Button
-				btn
-				m-3
-				text-sm
-				:disabled="!name"
-				@click="go"
+		<div id="name-test">
+			<input
+				id="input"
+				v-model="name"
+				:placeholder="t('intro.whats-your-name')"
+				:aria-label="t('intro.whats-your-name')"
+				type="text"
+				autocomplete="false"
+				p="x4 y2"
+				w="250px"
+				text="center"
+				bg="transparent"
+				border="~ rounded gray-200 dark:gray-700"
+				outline="none active:none"
+				@keydown.enter="go"
 			>
-				{{ t('button.go') }}
-			</Button>
+			<label class="hidden" for="input">{{ t('intro.whats-your-name') }}</label>
+			<div>
+				<Button
+					btn
+					m-3
+					text-sm
+					:disabled="!name"
+					@click="go"
+				>
+					{{ t('button.go') }}
+				</Button>
+			</div>
 		</div>
 	</div>
 </template>
