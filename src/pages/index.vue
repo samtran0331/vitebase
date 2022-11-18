@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { Button } from '@progress/kendo-vue-buttons'
+import { Dialog, DialogActionsBar, Window } from "@progress/kendo-vue-dialogs"
 const user = useUserStore()
 const name = $ref(user.savedName)
 
@@ -9,6 +11,17 @@ const go = () => {
 }
 
 const { t } = useI18n()
+const visibleDialog = ref(false)
+function myClick(msg: string) {
+	alert(`I clicked a button:\n${msg}`)
+}
+function toggleDialog() {
+	visibleDialog.value = !visibleDialog.value
+}
+function dialogClick(msg: string) {
+	alert(msg)
+	toggleDialog()
+}
 </script>
 
 <template>
@@ -33,6 +46,50 @@ const { t } = useI18n()
 			<div py-4 />
 		</div>
 		<h3>THIS IS THE MAIN INDEX.VUE PAGE!</h3>
+		<div style="margin: 25px;">
+			<p style="padding: 15px;">
+				<Button
+					theme-color="primary"
+					@click="myClick('hey')"
+				>
+					Test Button!
+				</Button>&nbsp;&nbsp;
+				<Button
+					icon="folder"
+					theme-color="primary"
+					@click="myClick('hi')"
+				>
+					Test Button!
+				</Button>&nbsp;&nbsp;
+				<Button
+					icon="folder"
+					theme-color="primary"
+					@click="myClick('ho')"
+				></Button>
+			</p>
+			<div>
+				<Button @click="toggleDialog">
+					Open Dialog
+				</Button>
+				<Dialog
+					v-if="visibleDialog"
+					title="Please confirm"
+					@close="toggleDialog"
+				>
+					<p :style="{ margin: '25px', textAlign: 'center' }">
+						Are you sure you want to continue?
+					</p>
+					<DialogActionsBar>
+						<Button @click="dialogClick('No!')">
+							No
+						</Button>
+						<Button @click="dialogClick('Yes!')">
+							Yes
+						</Button>
+					</DialogActionsBar>
+				</Dialog>
+			</div>
+		</div>
 		<input
 			id="input"
 			v-model="name"
@@ -51,7 +108,7 @@ const { t } = useI18n()
 		<label class="hidden" for="input">{{ t('intro.whats-your-name') }}</label>
 
 		<div>
-			<button
+			<Button
 				btn
 				m-3
 				text-sm
@@ -59,7 +116,7 @@ const { t } = useI18n()
 				@click="go"
 			>
 				{{ t('button.go') }}
-			</button>
+			</Button>
 		</div>
 	</div>
 </template>
