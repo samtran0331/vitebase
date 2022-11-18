@@ -19,7 +19,11 @@ export default defineConfig(({ command, mode }) => {
   if (command === 'serve') {
     // serve is dev environment with vite
     return {
-      // base: '/webvantage/vue/',
+      server: {
+        host: 'WebvantageVue',
+        port: 3333,
+        strictPort: true,
+      },
 
       resolve: {
         alias: {
