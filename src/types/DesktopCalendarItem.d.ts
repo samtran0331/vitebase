@@ -1,0 +1,67 @@
+declare interface DesktopCalendarItem {
+  ID?: number
+  EmployeeCode?: string
+  FirstName?: string
+  MiddleInitial?: string
+  LastName?: string
+  FullName?: string
+  FullNameGroup?: string
+  ClientCode?: string
+  DivisionCode?: string
+  ProductCode?: string
+  JobNumber?: number
+  JobComponentNumber?: number
+  ClientName?: string
+  DivisionName?: string
+  ProductDescription?: string
+  JobDescription?: string
+  JobComponentDescription?: string
+  TaskNonTaskDisplay?: string
+  TaskNonTaskDescription?: string
+  TaskStatus?: string
+  TaskSequenceNumber?: number
+  FunctionCode?: string
+  TaskDescription?: string
+  TaskHoursAllowed?: number
+  TrafficCode?: string
+  TrafficDescription?: string
+  ThisDay?: number
+  StartDay?: number
+  EndDay?: number
+  AllDay?: number
+  NumberOfDays?: number
+  TaskTempCompleteDate?: Date
+  StartDate?: Date
+  EndDate?: Date
+  StartTime?: Date
+  EndTime?: Date
+  WeekViewEndTime
+  HasTime?: boolean
+  NonTaskID?: number
+  NonTaskType?: string
+  NonTaskHours?: number
+  NonTaskCategory?: string
+  IsNonTask?: boolean
+  WeekViewAllDay?: boolean
+  RecType?: string
+  RecOrder?: number
+  IcalID?: string
+  AdNumber?: string
+  AdNumberDescription?: string
+  AdNumberColor?: string
+  ResourceCode?: string
+  ResourceDescription?: string
+  Priority?: string
+  // HoursAllowed?: number
+  DueTime?: string
+  // EmployeeDescriptionHours?: string
+  Reminder?: string
+  Recurrence?: string
+  RecurrenceParent?: number
+  ResourceType?: string
+  EmployeeCodeHours?: string
+  EmployeeNameHours?: string
+  AlertID?: number
+  SprintID?: number
+  UserDisplay?: string
+}
