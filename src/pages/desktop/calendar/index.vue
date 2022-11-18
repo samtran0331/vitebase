@@ -28,6 +28,14 @@ function dialogClick(msg: string) {
 <template>
 	<div>
 		<h3>THIS IS THE INDEX.VUE PAGE IN THE CALENDAR FOLDER!!!!????</h3>
+		<hr />
+		<Button
+			class="k-button wv-icon-button wv-add-new"
+			title="Add a new calendar item"
+		>
+			<span class="wvi wvi-navigate-plus" />Addddd
+		</Button>
+		<hr />
 		<div id="kendo-controls" style="margin: 25px;">
 			<p style="padding: 15px;">
 				<Button
@@ -90,7 +98,7 @@ function dialogClick(msg: string) {
 			>
 			<label class="hidden" for="input">{{ t('intro.whats-your-name') }}</label>
 			<div>
-				<button
+				<Button
 					btn
 					m-3
 					text-sm
@@ -98,7 +106,7 @@ function dialogClick(msg: string) {
 					@click="go"
 				>
 					{{ t('button.go') }}
-				</button>
+				</Button>
 			</div>
 		</div>
 	</div>
