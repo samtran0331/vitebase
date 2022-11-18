@@ -32,8 +32,9 @@ function dialogClick(msg: string) {
 		<Button
 			class="k-button wv-icon-button wv-add-new"
 			title="Add a new calendar item"
+			@click="myClick('wv icon button on calendar page')"
 		>
-			<span class="wvi wvi-navigate-plus" />Addddd
+			<span class="wvi wvi-navigate-plus" />Add
 		</Button>
 		<hr />
 		<div id="kendo-controls" style="margin: 25px;">
