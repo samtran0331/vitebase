@@ -7,6 +7,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    Allocation: typeof import('./components/desktop/calendar/Allocation.vue')['default']
     Counter: typeof import('./components/shared/Counter.vue')['default']
     Dialog: typeof import('./components/shared/Dialog.vue')['default']
     Footer: typeof import('./components/shared/Footer.vue')['default']
