@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Button } from '@progress/kendo-vue-buttons'
 import { Dialog, DialogActionsBar, Window } from "@progress/kendo-vue-dialogs"
+import { ScrollView } from '@progress/kendo-vue-scrollview'
 const user = useUserStore()
 const name = $ref(user.savedName)
 
@@ -12,6 +13,48 @@ const go = () => {
 
 const { t } = useI18n()
 const visibleDialog = ref(false)
+const items = ref([
+    {
+        position: 1,
+        url: 'src/images/simplifi_aqua_color_logo.png',
+    },
+    // {
+    //     position: 2,
+    //     url: 'https://picsum.photos/512/512?random=1',
+    // },
+    {
+        position: 3,
+        url: 'src/images/vue_logo.svg',
+    },
+    // {
+    //     position: 4,
+    //     url: 'https://picsum.photos/512/512?random=2',
+    // },
+    {
+        position: 5,
+        url: 'src/images/vite_logo.svg',
+    },
+    // {
+    //     position: 6,
+    //     url: 'https://picsum.photos/512/512?random=3',
+    // },
+    {
+        position: 7,
+        url: 'src/images/pinia_logo.svg',
+    },
+    // {
+    //     position: 8,
+    //     url: 'https://picsum.photos/512/512?random=4',
+    // },
+    {
+        position: 9,
+        url: 'src/images/simplifi_aqua_color_logo.png',
+    },
+    // {
+    //     position: 10,
+    //     url: 'https://picsum.photos/512/512?random=5',
+    // },
+])
 function myClick(msg: string) {
 	alert(`I clicked a button:\n${msg}`)
 }
@@ -47,6 +90,28 @@ function dialogClick(msg: string) {
 		</div>
 		<h3>THIS IS THE MAIN INDEX.VUE PAGE!?!?!</h3>
 		<div id="kendo-controls" style="margin: 25px;">
+			<hr style="margin: 10px 0px 10px 0px" />
+			<ScrollView
+				:style="{
+					width: '256px',
+					height: '256px',
+				}"
+				:data-items="items"
+				content="content"
+				:endless="true"
+				:automatic-view-change-interval="5000"
+			>
+				<template #content="{ props }">
+					<div class="image-with-text">
+						<!-- <p>
+          Showing image: {{ props.item.url }} :: {{ props.item.position }} of {{ props.items.length }}.
+        </p> -->
+						<img :src="props.item.url" :draggable="false" />
+					</div>
+				</template>
+			</ScrollView>
+			<hr style="margin: 10px 0px 10px 0px" />
+			<img src="../images/pinia_logo.svg" style="height: 120px;" />
 			<hr style="margin: 10px 0px 10px 0px" />
 			<Button
 				class="k-button wv-icon-button wv-add-new"
