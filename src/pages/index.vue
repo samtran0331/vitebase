@@ -2,6 +2,11 @@
 import { Button } from '@progress/kendo-vue-buttons'
 import { Dialog, DialogActionsBar, Window } from "@progress/kendo-vue-dialogs"
 import { ScrollView } from '@progress/kendo-vue-scrollview'
+import vueLogo from '../images/vue_logo.svg'
+import aquaLogo from '../images/simplifi_aqua_color_logo.png'
+import viteLogo from '../images/vite_logo.svg'
+import piniaImage from '../images/pinia_logo.svg'
+
 const user = useUserStore()
 const name = $ref(user.savedName)
 
@@ -16,7 +21,7 @@ const visibleDialog = ref(false)
 const items = ref([
     {
         position: 1,
-        url: 'src/images/simplifi_aqua_color_logo.png',
+        url: aquaLogo,
     },
     // {
     //     position: 2,
@@ -24,7 +29,7 @@ const items = ref([
     // },
     {
         position: 3,
-        url: 'src/images/vue_logo.svg',
+        url: vueLogo,
     },
     // {
     //     position: 4,
@@ -32,7 +37,7 @@ const items = ref([
     // },
     {
         position: 5,
-        url: 'src/images/vite_logo.svg',
+        url: viteLogo,
     },
     // {
     //     position: 6,
@@ -40,18 +45,14 @@ const items = ref([
     // },
     {
         position: 7,
-        url: 'src/images/pinia_logo.svg',
+        url: piniaImage,
     },
     // {
     //     position: 8,
     //     url: 'https://picsum.photos/512/512?random=4',
     // },
-    {
-        position: 9,
-        url: 'src/images/simplifi_aqua_color_logo.png',
-    },
     // {
-    //     position: 10,
+    //     position: 9,
     //     url: 'https://picsum.photos/512/512?random=5',
     // },
 ])
@@ -111,7 +112,10 @@ function dialogClick(msg: string) {
 				</template>
 			</ScrollView>
 			<hr style="margin: 10px 0px 10px 0px" />
-			<img src="../images/pinia_logo.svg" style="height: 120px;" />
+			<img
+				:src='piniaImage'
+				style="height: 120px;"
+			/>
 			<hr style="margin: 10px 0px 10px 0px" />
 			<Button
 				class="k-button wv-icon-button wv-add-new"
