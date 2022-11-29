@@ -29,6 +29,8 @@ function dialogClick(msg: string) {
 	<div>
 		<h3>THIS IS THE INDEX.VUE PAGE IN THE CALENDAR FOLDER!!!!????</h3>
 		<hr style="margin: 10px 0px 10px 0px" />
+		<img src="../../../images/vite_logo.svg" style="height: 120px;" />
+		<hr style="margin: 10px 0px 10px 0px" />
 		<DateTimePicker :style="{ width: '260px' }" />
 		<hr style="margin: 10px 0px 10px 0px" />
 		<Button
