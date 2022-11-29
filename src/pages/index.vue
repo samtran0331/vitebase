@@ -57,13 +57,13 @@ const items = ref([
     // },
 ])
 function myClick(msg: string) {
-	alert(`I clicked a button:\n${msg}`)
+	// alert(`I clicked a button:\n${msg}`)
 }
 function toggleDialog() {
 	visibleDialog.value = !visibleDialog.value
 }
 function dialogClick(msg: string) {
-	alert(msg)
+	// alert(msg)
 	toggleDialog()
 }
 </script>
@@ -113,7 +113,7 @@ function dialogClick(msg: string) {
 			</ScrollView>
 			<hr style="margin: 10px 0px 10px 0px" />
 			<img
-				:src='piniaImage'
+				:src="piniaImage"
 				style="height: 120px;"
 			/>
 			<hr style="margin: 10px 0px 10px 0px" />

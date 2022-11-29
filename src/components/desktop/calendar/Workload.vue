@@ -425,7 +425,7 @@ function clearGrid() {
 	text-align: right !important;
 }
 .center {
-text-align: center;
+	text-align: center;
 }
 </style>
 
