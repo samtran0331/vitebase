@@ -14,13 +14,13 @@ const go = () => {
 const { t } = useI18n()
 const visibleDialog = ref(false)
 function myClick(msg: string) {
-	alert(`I clicked a button:\n${msg}`)
+	// alert(`I clicked a button:\n${msg}`)
 }
 function toggleDialog() {
 	visibleDialog.value = !visibleDialog.value
 }
 function dialogClick(msg: string) {
-	alert(msg)
+	// alert(msg)
 	toggleDialog()
 }
 </script>
