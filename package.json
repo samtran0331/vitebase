@@ -73,6 +73,7 @@
     "markdown-it-link-attributes": "^4.0.1",
     "markdown-it-shiki": "^0.6.1",
     "pnpm": "^7.14.2",
+    "sass": "^1.56.1",
     "shiki": "^0.11.1",
     "taze": "^0.8.3",
     "typescript": "^4.8.4",
