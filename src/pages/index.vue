@@ -1,21 +1,23 @@
 <script setup lang="ts">
+import { useRoute } from 'vue-router'
 import { Button } from '@progress/kendo-vue-buttons'
 import { Dialog, DialogActionsBar, Window } from "@progress/kendo-vue-dialogs"
 import { ScrollView } from '@progress/kendo-vue-scrollview'
+import { useGlobalStore } from '../stores/globals'
 import vueLogo from '../images/vue_logo.svg'
 import aquaLogo from '../images/simplifi_aqua_color_logo.png'
 import viteLogo from '../images/vite_logo.svg'
 import piniaImage from '../images/pinia_logo.svg'
+const route = useRoute()
+const store = useGlobalStore()
 
 const user = useUserStore()
 const name = $ref(user.savedName)
-
 const router = useRouter()
 const go = () => {
   if (name)
     router.push(`/hi/${encodeURIComponent(name)}`)
 }
-
 const { t } = useI18n()
 const visibleDialog = ref(false)
 const items = ref([
@@ -66,6 +68,12 @@ function dialogClick(msg: string) {
 	// alert(msg)
 	toggleDialog()
 }
+onMounted(() => {
+    if (route.query && route.query.dl) {
+        store.setToken(route.query.dl.toString())
+        console.log('Setting store.connToken', store.connToken)
+    }
+})
 </script>
 
 <template>
@@ -199,6 +207,55 @@ function dialogClick(msg: string) {
 		</div>
 	</div>
 </template>
+
+<style scoped lang="scss">
+/* center the Carousel horizontally */
+/* k-scrollview is the default component class */
+.k-scrollview {
+    margin: 0 auto;
+}
+/* enable absolute positioning inside the Carousel template */
+.image-with-text {
+    position: relative;
+}
+
+/* style the overlay text inside the Carousel */
+.image-with-text > p {
+    position: absolute;
+    top: 1rem;
+    left: 1.6rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    font-style: italic;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+.logo {
+    height: 100px;
+    width: 100px;
+    display: inline-flex;
+}
+.built-with {
+    margin: 12px;
+    color: #ffffff;
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    background: rgb(116, 207, 176);
+    background: linear-gradient(
+        90deg,
+        rgba(116, 207, 176, 1) 0%,
+        rgba(79, 172, 228, 1) 85%
+    );
+}
+</style>
 
 <route lang="yaml">
 meta:
